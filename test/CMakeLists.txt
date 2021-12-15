@@ -4,7 +4,7 @@
 
 find_package(Catch2 REQUIRED)
 find_package(Eigen3 REQUIRED)
-find_package(Boost 1.77.0 COMPONENTS math thread fiber context )
+find_package(Boost 1.77.0 COMPONENTS thread context)
 
 
 include(CTest)
