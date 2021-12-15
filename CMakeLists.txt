@@ -25,6 +25,8 @@ endif()
 # Link this 'library' to use the warnings specified in CompilerWarnings.cmake
 add_library(project_warnings INTERFACE)
 
+include_directories(extern)
+
 # enable cache system
 include(cmake/Cache.cmake)
 
