@@ -3,15 +3,7 @@
 #include "../src/lib/cpplib.h"
 #include <Eigen/Core>
 #include <boost/math/quadrature/trapezoidal.hpp>
-#if (__GNUC__)
-  #pragma GCC diagnostic push
-  #pragma GCC diagnostic ignored "-Wsign-conversion"
-  #pragma GCC diagnostic ignored "-Wconversion"
-  #pragma GCC diagnostic ignored "-Wold-style-cast"
-  #pragma GCC diagnostic ignored "-Wuseless-cast"
-  #include <EigenRand/EigenRand>
-  #pragma GCC diagnostic pop
-#elif (__clang__)
+#if (__clang__)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wsign-conversion"
   #pragma clang diagnostic ignored "-Wconversion"
@@ -19,6 +11,14 @@
   #pragma clang diagnostic ignored "-Wshadow"
   #include <EigenRand/EigenRand>
   #pragma clang diagnostic pop
+#elif (__GNUC__)|| defined(__GNUG__)
+  #pragma GCC diagnostic push
+  #pragma GCC diagnostic ignored "-Wsign-conversion"
+  #pragma GCC diagnostic ignored "-Wconversion"
+  #pragma GCC diagnostic ignored "-Wold-style-cast"
+  #pragma GCC diagnostic ignored "-Wuseless-cast"
+  #include <EigenRand/EigenRand>
+  #pragma GCC diagnostic pop
 #elif (_MSC_VER)
   #include <EigenRand/EigenRand>
 #endif
