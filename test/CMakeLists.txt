@@ -1,10 +1,10 @@
-set( Boost_USE_STATIC_LIBS OFF )
-set( Boost_USE_MULTITHREADED ON )
-set( Boost_USE_STATIC_RUNTIME OFF )
+#set( Boost_USE_STATIC_LIBS OFF )
+#set( Boost_USE_MULTITHREADED ON )
+#set( Boost_USE_STATIC_RUNTIME OFF )
 
 find_package(Catch2 REQUIRED)
 find_package(Eigen3 REQUIRED)
-find_package(Boost 1.77.0 COMPONENTS thread fiber context )
+find_package(Boost 1.77.0 COMPONENTS math thread fiber context )
 
 
 include(CTest)
