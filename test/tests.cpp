@@ -19,7 +19,8 @@
   #pragma clang diagnostic ignored "-Wshadow"
   #include <EigenRand/EigenRand>
   #pragma clang diagnostic pop
-
+#elif (_MSC_VER)
+  #include <EigenRand/EigenRand>
 #endif
 
 unsigned int Factorial(unsigned int number)// NOLINT(misc-no-recursion)
