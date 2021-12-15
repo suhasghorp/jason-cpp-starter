@@ -20,6 +20,7 @@
   #include <EigenRand/EigenRand>
   #pragma GCC diagnostic pop
 #elif (_MSC_VER)
+  # pragma warning(disable: 4245)
   #include <EigenRand/EigenRand>
 #endif
 
