@@ -79,6 +79,10 @@ endif()
 
 add_subdirectory(src)
 
+include_directories(src/lib)
+add_subdirectory(src/lib)
+
+
 option(ENABLE_UNITY "Enable Unity builds of projects" OFF)
 if(ENABLE_UNITY)
   # Add for any project you want to apply unity builds for
