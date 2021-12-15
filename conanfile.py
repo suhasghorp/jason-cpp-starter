@@ -11,6 +11,8 @@ class CppStarterProject(ConanFile):
     name = "CppStarterProject"
     version = "0.1"
     requires = (
+        "boost/1.77.0",
+        "eigen/3.4.0",
         "catch2/2.13.7",
         "docopt.cpp/0.6.2",
         "fmt/8.0.1",

@@ -1,6 +1,8 @@
 #include <catch2/catch.hpp>
 
 #include "../src/lib/cpplib.h"
+#include <Eigen/Core>
+#include <boost/math/quadrature/trapezoidal.hpp>
 
 unsigned int Factorial(unsigned int number)// NOLINT(misc-no-recursion)
 {
