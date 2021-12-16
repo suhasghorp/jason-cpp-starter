@@ -77,12 +77,12 @@ TEST_CASE("FindMax", "[cpplib]") {
 TEST_CASE("TBB parallel_for", "[TBB]")
 {
   auto values = std::vector<double>(10000);    
-  tbb::parallel_for( tbb::blocked_range<int>(0,values.size()),
-                       [&](tbb::blocked_range<int> r){
-    for (int i=r.begin(); i<r.end(); ++i){
-      values[i] = std::sin(i * 0.001);
-        }
-    });
+  tbb::parallel_for( tbb::blocked_range<size_t>(0,values.size()),
+                       [&](tbb::blocked_range<size_t> r){
+    for (size_t i=r.begin(); i<r.end(); ++i){
+      values[i] = std::sin(static_cast<double>(i) * 0.001);
+    }
+  });
 
   double total = 0;
   for (double value : values){
