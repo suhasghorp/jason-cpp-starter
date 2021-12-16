@@ -10,7 +10,7 @@ class CppStarterProject(ConanFile):
     }
     name = "CppStarterProject"
     version = "0.1"
-    requires = (
+    '''requires = (
         "boost/1.77.0",
         "eigen/3.4.0",
         "catch2/2.13.7",
@@ -18,10 +18,25 @@ class CppStarterProject(ConanFile):
         "fmt/8.0.1",
         "spdlog/1.9.2",
         "tbb/2020.0"
-    )
+    )'''
     generators = "cmake", "gcc", "txt", "cmake_find_package"
 
     def requirements(self):
+        if self.settings.os == "Windows" or self.settings.os == "Linux":
+            self.requires("boost/1.77.0")
+            self.requires("eigen/3.4.0")
+            self.requires("catch2/2.13.7")
+            self.requires("docopt.cpp/0.6.2")
+            self.requires("fmt/8.0.1")
+            self.requires("spdlog/1.9.2")
+            self.requires("tbb/2020.0")
+        if self.settings.os == "macOS":
+            self.requires("boost/1.77.0")
+            self.requires("eigen/3.4.0")
+            self.requires("catch2/2.13.7")
+            self.requires("docopt.cpp/0.6.2")
+            self.requires("fmt/8.0.1")
+            self.requires("spdlog/1.9.2")
         if self.options.cpp_starter_use_imgui == "ON":
             self.requires("imgui-sfml/2.1@bincrafters/stable")
         if self.options.cpp_starter_use_sdl == "ON":
