@@ -70,7 +70,7 @@ jobs:
           echo "C:/Program Files/OpenCppCoverage" >> $GITHUB_PATH
         elif [ "$RUNNER_OS" == "macOS" ]; then
           xcrun --show-sdk-path
-          ls /Applications/Xcode_13.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
+          export CPATH="/Applications/Xcode_13.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"
           #cd /Applications/Xcode_13.1.app/Contents/Developer && ls
           #sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
         fi;
