@@ -70,6 +70,7 @@ jobs:
           echo "C:/Program Files/OpenCppCoverage" >> $GITHUB_PATH
         elif [ "$RUNNER_OS" == "macOS" ]; then
           xcode-select -p
+          cd /Library/Developer/CommandLineTools/Packages && ls
           sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
         fi;
 
