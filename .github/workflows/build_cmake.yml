@@ -69,11 +69,12 @@ jobs:
           # Add to Path
           echo "C:/Program Files/OpenCppCoverage" >> $GITHUB_PATH
         elif [ "$RUNNER_OS" == "macOS" ]; then
-          xcrun --show-sdk-path
-          xcodebuild -version -sdk macosx Path
-          
+          #xcrun --show-sdk-path
+          #xcodebuild -version -sdk macosx Path          
           export SDKROOT=$(xcodebuild -version -sdk macosx Path)
           export CPATH="$SDKROOT/usr/include"
+          ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" 2> /dev/null
+          brew install tbb
           #cd /Applications/Xcode_13.1.app/Contents/Developer && ls
           #sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
         fi;
