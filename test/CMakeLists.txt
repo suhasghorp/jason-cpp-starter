@@ -5,7 +5,7 @@
 find_package(Catch2 REQUIRED)
 find_package(Eigen3 REQUIRED)
 find_package(Boost 1.77.0 COMPONENTS thread context)
-
+find_package(TBB REQUIRED tbb)
 
 include(CTest)
 include(Catch)
@@ -16,7 +16,7 @@ target_link_libraries(catch_main PRIVATE project_options)
 
 add_executable(tests tests.cpp)
 include_directories(SYSTEM ${Boost_INCLUDE_DIRS} ) # must have SYSTEM so Boost warnings are ignored
-target_link_libraries(tests PRIVATE project_warnings project_options catch_main cpplib Eigen3::Eigen ${Boost_LIBRARIES})
+target_link_libraries(tests PRIVATE project_warnings project_options catch_main cpplib Eigen3::Eigen ${Boost_LIBRARIES} TBB::tbb)
 
 # automatically discover tests that are defined in catch based test files you can modify the unittests. Set TEST_PREFIX
 # to whatever you want, or use different for different binaries

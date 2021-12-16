@@ -3,6 +3,9 @@
 #include "../src/lib/cpplib.h"
 #include <Eigen/Core>
 #include <boost/math/quadrature/trapezoidal.hpp>
+#include <tbb/parallel_for.h>
+
+
 #if (__clang__)
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wsign-conversion"
