@@ -31,7 +31,7 @@ class CppStarterProject(ConanFile):
             self.requires("fmt/8.0.1")
             self.requires("spdlog/1.9.2")
             self.requires("tbb/2020.0")
-        if self.settings.os == "macOS":
+        if self.settings.os == "Macos":
             self.requires("boost/1.77.0")
             self.requires("eigen/3.4.0")
             self.requires("catch2/2.13.7")
