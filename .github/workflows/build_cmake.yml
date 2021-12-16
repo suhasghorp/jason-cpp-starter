@@ -69,9 +69,9 @@ jobs:
           # Add to Path
           echo "C:/Program Files/OpenCppCoverage" >> $GITHUB_PATH
         elif [ "$RUNNER_OS" == "macOS" ]; then
-          xcode-select -p
-          cd /Applications/Xcode_13.1.app/Contents/Developer && ls
-          sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
+          xcrun --show-sdk-path
+          #cd /Applications/Xcode_13.1.app/Contents/Developer && ls
+          #sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
         fi;
 
     - name: Configure CMake
