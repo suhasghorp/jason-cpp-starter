@@ -71,8 +71,9 @@ jobs:
         elif [ "$RUNNER_OS" == "macOS" ]; then
           xcrun --show-sdk-path
           xcodebuild -version -sdk macosx Path
-          export CPATH="/Applications/Xcode_13.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include"
+          
           export SDKROOT=$(xcodebuild -version -sdk macosx Path)
+          export CPATH="$SDKROOT/usr/include"
           #cd /Applications/Xcode_13.1.app/Contents/Developer && ls
           #sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
         fi;
