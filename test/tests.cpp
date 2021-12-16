@@ -73,3 +73,20 @@ TEST_CASE("FindMax", "[cpplib]") {
     REQUIRE(cpplib.FindMax(inputs) == 1000);
   }
 }
+
+TEST_CASE("TBB parallel_for", "[TBB]")
+{
+  auto values = std::vector<double>(10000);    
+  tbb::parallel_for( tbb::blocked_range<int>(0,values.size()),
+                       [&](tbb::blocked_range<int> r){
+    for (int i=r.begin(); i<r.end(); ++i){
+      values[i] = std::sin(i * 0.001);
+        }
+    });
+
+  double total = 0;
+  for (double value : values){
+    total += value;
+  }
+  REQUIRE(total == 1839.4);
+}
