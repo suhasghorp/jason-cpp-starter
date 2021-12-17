@@ -9,9 +9,9 @@ class CppStarterProject(ConanFile):
         "cpp_starter_use_sdl": ["ON", "OFF", ""]
     }
     #settings = "cppstd","os"
-    settings = {"compiler": {"gcc": {"cppstd": [17]},
-                 "Visual Studio": {"cppstd": [17]},
-                 "Clang":{"cppstd":[17]}}, "os":None}
+    settings = {"compiler": {"gcc": {"cppstd": [17,20]},
+                 "Visual Studio": {"cppstd": [17,20]},
+                 "Clang":{"cppstd":[17,20]}}, "os":None}
     name = "CppStarterProject"
     version = "0.1"
     '''requires = (
