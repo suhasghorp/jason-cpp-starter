@@ -11,7 +11,7 @@ class CppStarterProject(ConanFile):
     #settings = "cppstd","os"
     settings = {"compiler": {"gcc": {"cppstd": [17]},
                  "Visual Studio": {"cppstd": [17]},
-                 "Clang":{"cppstd":[17]}}, "os"}
+                 "Clang":{"cppstd":[17]}}, "os":None}
     name = "CppStarterProject"
     version = "0.1"
     '''requires = (
