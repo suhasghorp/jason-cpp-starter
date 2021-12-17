@@ -75,7 +75,7 @@ TEST_CASE("FindMax", "[cpplib]") {
   }
 }
 
-TEST_CASE("TBB parallel_for", "[TBB]")
+TEST_CASE("TBB parallel for", "[TBB]")
 {
   auto values = std::vector<double>(10000);    
   tbb::parallel_for( tbb::blocked_range<size_t>(0,values.size()),
