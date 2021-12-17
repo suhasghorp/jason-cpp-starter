@@ -26,7 +26,7 @@ class CppStarterProject(ConanFile):
         if self.settings.os == "Windows" or self.settings.os == "Linux":
             self.requires("boost/1.77.0")
             self.requires("eigen/3.4.0")
-            self.requires("catch2/2.13.7")
+            self.requires("catch2/2.13.6")
             self.requires("docopt.cpp/0.6.2")
             self.requires("fmt/8.0.1")
             self.requires("spdlog/1.9.2")
@@ -34,7 +34,7 @@ class CppStarterProject(ConanFile):
         if self.settings.os == "Macos":
             self.requires("boost/1.77.0")
             self.requires("eigen/3.4.0")
-            self.requires("catch2/2.13.7")
+            self.requires("catch2/2.13.6")
             self.requires("docopt.cpp/0.6.2")
             self.requires("fmt/8.0.1")
             self.requires("spdlog/1.9.2")
