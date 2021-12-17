@@ -89,5 +89,5 @@ TEST_CASE("TBB parallel_for", "[TBB]")
   for (double value : values){
     total += value;
   }
-  REQUIRE(total == 1839.4_a); 
+  REQUIRE(total == 1839.3_a); 
 }
