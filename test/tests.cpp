@@ -5,6 +5,7 @@
 #include <boost/math/quadrature/trapezoidal.hpp>
 #include <tbb/parallel_for.h>
 
+using namespace Catch::literals;
 
 #if (__clang__)
   #pragma clang diagnostic push
@@ -88,5 +89,5 @@ TEST_CASE("TBB parallel_for", "[TBB]")
   for (double value : values){
     total += value;
   }
-  REQUIRE(total == 1839.4);
+  REQUIRE(total == 1839.4_a); 
 }

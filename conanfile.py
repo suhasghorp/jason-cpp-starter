@@ -8,7 +8,7 @@ class CppStarterProject(ConanFile):
         "cpp_starter_use_imgui": ["ON", "OFF", ""],
         "cpp_starter_use_sdl": ["ON", "OFF", ""]
     }
-    settings = "os"
+    settings = "cppstd","os"
     name = "CppStarterProject"
     version = "0.1"
     '''requires = (
